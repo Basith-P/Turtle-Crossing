@@ -32,6 +32,7 @@ while game_is_on:
     for car in car_manager.cars:
         if player.distance(car) < 20:
             game_is_on = False
+            scoreboard.game_over()
 
     if player.is_on_finish_line():
         player.goto_start()
