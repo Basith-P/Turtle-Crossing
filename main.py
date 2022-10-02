@@ -24,3 +24,15 @@ while game_is_on:
 
     car_manager.create_car()
     car_manager.move_cars()
+
+    # Detect collisin with car
+    for car in car_manager.cars:
+        if player.distance(car) < 20:
+            game_is_on = False
+
+    if player.is_on_finish_line():
+        player.goto_start()
+        car_manager.level_up()
+
+
+screen.exitonclick()
